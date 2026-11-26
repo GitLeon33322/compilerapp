@@ -1,0 +1,35 @@
+<!doctype html>
+<html lang="es">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>Compilador Frontend</title>
+  <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+  <main class="layout">
+    <section class="col izq">
+      <div class="barra">
+        <select id="ejemplos" aria-label="Ejemplos"></select>
+        <button id="analizar">Analizar</button>
+      </div>
+      <textarea id="codigo" spellcheck="false" aria-label="Código fuente"></textarea>
+    </section>
+
+    <section class="col der">
+      <div id="badges" class="badges"></div>
+      <nav class="tabs">
+        <button class="tab activa" data-tab="tokens">Tokens</button>
+        <button class="tab" data-tab="ast">AST</button>
+        <button class="tab" data-tab="simbolos">Tabla de Símbolos</button>
+        <button class="tab" data-tab="errores">Errores</button>
+      </nav>
+      <div id="panel-tokens" class="panel activo"></div>
+      <div id="panel-ast" class="panel"></div>
+      <div id="panel-simbolos" class="panel"></div>
+      <div id="panel-errores" class="panel"></div>
+    </section>
+  </main>
+  <script type="module" src="src/main.js"></script>
+</body>
+</html>

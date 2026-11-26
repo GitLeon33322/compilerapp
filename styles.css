@@ -1,0 +1,39 @@
+* { box-sizing: border-box; }
+body { margin: 0; font-family: system-ui, sans-serif; background: #f5f6f8; color: #1d2330; }
+.layout { display: grid; grid-template-columns: 1fr 1fr; gap: 12px; height: 100vh; padding: 12px; }
+.col { display: flex; flex-direction: column; min-height: 0; background: #fff; border: 1px solid #d8dce3; border-radius: 8px; padding: 10px; }
+.barra { display: flex; gap: 8px; margin-bottom: 8px; }
+.barra select { flex: 1; padding: 6px; }
+button { cursor: pointer; padding: 6px 14px; border: 1px solid #2b5fd9; background: #2b5fd9; color: #fff; border-radius: 6px; font-size: 14px; }
+button:hover { background: #2150bd; }
+#codigo { flex: 1; resize: none; font: 14px/20px Consolas, "Courier New", monospace; padding: 8px; border: 1px solid #d8dce3; border-radius: 6px; tab-size: 2; }
+
+.badges { display: flex; gap: 8px; margin-bottom: 8px; flex-wrap: wrap; }
+.badge { padding: 3px 10px; border-radius: 999px; font-size: 12px; background: #e6f4ea; color: #1e6b34; }
+.badge.lexico, .badge.sintactico, .badge.semantico { background: #eceff3; color: #3a4252; }
+
+.tabs { display: flex; gap: 4px; border-bottom: 1px solid #d8dce3; }
+.tab { background: transparent; color: #3a4252; border: none; border-bottom: 2px solid transparent; border-radius: 0; }
+.tab:hover { background: #eef1f6; }
+.tab.activa { color: #2b5fd9; border-bottom-color: #2b5fd9; }
+.panel { display: none; flex: 1; overflow: auto; padding-top: 8px; font-size: 13px; }
+.panel.activo { display: block; }
+
+table { border-collapse: collapse; width: 100%; font-family: Consolas, monospace; }
+th, td { text-align: left; padding: 3px 8px; border-bottom: 1px solid #eceff3; }
+th { position: sticky; top: 0; background: #fff; }
+
+#panel-ast { font-family: Consolas, monospace; }
+#panel-ast details, #panel-ast .hoja { margin-left: 16px; }
+#panel-ast > details, #panel-ast > .hoja { margin-left: 0; }
+#panel-ast summary { cursor: pointer; }
+
+.ok { color: #1e8a3c; font-weight: 600; }
+.errores { list-style: none; margin: 0; padding: 0; }
+.errores li { padding: 6px 8px; margin-bottom: 4px; border-left: 4px solid; border-radius: 4px; background: #f7f8fa; cursor: pointer; }
+.errores li:hover { background: #eef1f6; }
+.errores .lexico { border-color: #d98a00; }
+.errores .sintactico { border-color: #d92b2b; }
+.errores .semantico { border-color: #7b3fd9; }
+
+@media (max-width: 800px) { .layout { grid-template-columns: 1fr; height: auto; } .col { min-height: 50vh; } }
